@@ -1,0 +1,325 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  background-color: #222831;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+#background-vid{
+  position: fixed;
+  left: 0;
+  top: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  opacity: 1;
+}
+.container{
+  z-index: 1;
+}
+hr {
+  width: 40%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid #00adb5;
+  margin: 5px 0;
+}
+body h1 {
+  text-align: center;
+  margin: 30px 0;
+  font-weight: bold;
+  font-size: 35px;
+  letter-spacing: 5px;
+  color: #eeeeee;
+}
+body h1 span i {
+  font-size: 30px;
+}
+.main-content {
+  margin: 80px 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+#left {
+  flex-basis: 40%;
+  display: block;
+  margin: 0 20px;
+  width: auto;
+}
+#left form {
+  width: auto;
+  display: block;
+}
+.toggle-dark-light{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px auto 0;
+  width: 40%;
+}
+.toggle-dark-light h4{
+  color: #00adb5;
+  font-weight: 100;
+}
+.switch input{
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+.switch{
+  display: inline-block;
+  height: 100%;
+  width: 80px;
+  position: relative;
+}
+.slider{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 30px;
+  transition: 0.5s ease;
+  background: #222831;
+  cursor: pointer;
+  box-shadow: 0 0 15px #00adb5;
+}
+.slider:before{
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translate(0,-50%);
+  content: "";
+  height: 80%;
+  width: 35px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 15px 15px #eeeeee;
+  transition: 0.5s ease;
+}
+input:checked + .slider{
+  background: #eeeeee;
+}
+input:checked + .slider:before{
+  box-shadow: inset -8px -4px 1px 4px #222831;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translate(100%,-50%);
+}
+.main-content label {
+  font-size: 20px;
+  font-weight: 500;
+  color: #00adb5;
+  padding: 10px;
+}
+.main-content label span {
+  color: crimson;
+  font-size: 15px;
+}
+.form-points {
+  width: 100%;
+  padding: 10px;
+}
+.form-points label {
+  font-size: 20px;
+  font-weight: 500;
+  color: #00adb5;
+}
+#dp-remove {
+  cursor: pointer;
+}
+#social-remove {
+  cursor: pointer;
+}
+.form-points ul {
+  list-style: none;
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+.form-points ul li {
+  height: 40px;
+  position: relative;
+}
+.tooltip {
+  padding: 8px;
+  color: #eeeeee;
+  background-color: #393e46;
+  font-size: 15px;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -115%);
+  border-radius: 5px;
+  border: 1px solid #00adb5;
+}
+.hover-active {
+  display: block;
+}
+.click-inactive {
+  transform: scale(1);
+  filter: blur(3px);
+}
+.click-active {
+  transform: scale(1.2);
+  filter: blur(0);
+}
+.social-icon {
+  height: 100%;
+  cursor: pointer;
+  transition: 0.1s ease;
+}
+.form-points input,
+.form-points textarea {
+  width: 100%;
+  border: 2px solid #eeeeee;
+  background: #393e46;
+  padding: 15px;
+  color: #eeeeee;
+  font-size: 18px;
+  border-radius: 10px;
+  margin-top: 10px;
+  display: inline;
+}
+.form-points textarea {
+  resize: none;
+}
+#download-btn {
+  margin: 10px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  background-color: #00adb5;
+  color: #393e46;
+  border: 1px solid #00adb5;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+#download-btn:hover {
+  background-color: transparent;
+  color: #00adb5;
+}
+#right {
+  display: block;
+  background-image: linear-gradient(to bottom right,rgb(220, 220, 220),rgb(130, 130, 130));
+  margin: auto 20px;
+  resize: both;
+  padding: 20px;
+  transition: 0.5s ease;
+}
+.right-dark-mode{
+  background-image: linear-gradient(to bottom right,rgb(110, 110, 110),rgb(20, 20, 20));
+}
+#card {
+  width: 450px;
+  min-width: 450px;
+  resize: both;
+  background-color: #eeeeee;
+  color: #222831;
+  border-radius: 10px;
+  border-top: 10px solid #222831;
+  border-bottom: 10px solid #222831;
+  box-shadow: 10px 10px 10px rgb(130, 130, 130);
+  /* dark: box-shadow: 10px 10px 10px rgb(20, 20, 20); */
+  transition: 0.5s ease;
+}
+.card-dark-mode {
+  background-color: #222831;
+  color: #eeeeee;
+}
+.card-credentials {
+  display: flex;
+  background-color: transparent;
+  justify-content: space-between;
+  padding: 4% 4% 3%;
+}
+.left-credentials {
+  display: flex;
+  background-color: transparent;
+}
+#dp {
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 5px #222831;
+  /* dark: box-shadow: 1px 1px 5px #eeeeee; */
+  transition: 0.5s ease;
+}
+.name-username {
+  height: 50px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  margin: auto 0 auto 12px;
+  justify-content: center;
+}
+.name-username h3 {
+  background-color: transparent;
+  font-size: 22px;
+}
+.name-username p {
+  background-color: transparent;
+  font-size: 14px;
+  font-weight: 400;
+}
+.name-username p span {
+  background-color: transparent;
+  font-size: 14px;
+}
+.right-credentials {
+  height: 50px;
+  background-color: transparent;
+  transition: 0.5s ease;
+}
+#social-platform {
+  height: 50px;
+  background-color: transparent;
+  transition: 0.5s ease;
+}
+.card-content {
+  background-color: transparent;
+  padding: 0 4% 4%;
+}
+.card-content p {
+  background-color: transparent;
+  font-size: 16px;
+  padding: 0 2%;
+  text-align: justify;
+  font-weight: 100;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 20px;
+}
+::-webkit-scrollbar-thumb {
+  background: #00adb5;
+  border-radius: 20px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00adb550;
+  width: 10px;
+}
+
+/************************* media query ***************************/
+
+/* @media(max-width: 1300px){
+    .main-content{
+        display: flex;
+        flex-direction: column;
+    }
+    #left{
+        display: block;
+        width: 100%;
+    }
+    #right{
+        display: block;
+        width: 100%;
+    }
+} */
