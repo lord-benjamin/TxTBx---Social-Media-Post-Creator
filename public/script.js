@@ -122,7 +122,7 @@ function boxChecked() {
 const downloadBtn = document.querySelector("#download-btn");
 downloadBtn.addEventListener("click", () => {
   const right = document.querySelector("#right");
-  html2canvas(right).then((canvas) => {
+  html2canvas(right).then(function (canvas) {
     canvas.toBlob(function (blob) {
       saveAs(blob, "my-post.png");
     });

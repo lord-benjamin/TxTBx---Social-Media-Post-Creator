@@ -62,18 +62,18 @@
 
           <div class="form-points">
             <label for="">Name: <span><em>Required</em></span></label>
-            <input oninput="changeName(this)" name="Name" type="text" placeholder="Enter Name" required />
+            <input id="name-field" oninput="changeName(this)" name="Name" type="text" placeholder="Enter Name" required />
           </div>
           <div class="form-points">
             <label for="">UserName: <span><em>Required</em></span></label>
-            <input oninput="changeUsername(this)" name="Username" type="text" placeholder="Enter Username" required />
+            <input id="username-field" oninput="changeUsername(this)" name="Username" type="text" placeholder="Enter Username" required />
           </div>
           <div class="form-points">
             <label for="">Text: <span><em>Required</em></span></label>
-            <textarea oninput="changeContent(this)" name="Text" id="" rows="4" placeholder="Enter Text"
+            <textarea id="text-field" oninput="changeContent(this)" name="Text" rows="4" placeholder="Enter Text"
               required></textarea>
           </div>
-
+          
         </form>
         <button id="download-btn">Download Your Post!</button>
       </div>

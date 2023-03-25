@@ -127,6 +127,7 @@ input:checked + .slider:before{
   font-size: 20px;
   font-weight: 500;
   color: #00adb5;
+  background-color: transparent;
 }
 #dp-remove {
   cursor: pointer;
@@ -244,6 +245,7 @@ input:checked + .slider:before{
 }
 #dp {
   height: 50px;
+  width: 50px;
   border-radius: 50%;
   box-shadow: 1px 1px 5px #222831;
   /* dark: box-shadow: 1px 1px 5px #eeeeee; */
@@ -269,6 +271,7 @@ input:checked + .slider:before{
 .name-username p span {
   background-color: transparent;
   font-size: 14px;
+  margin-left: 1.5px;
 }
 .right-credentials {
   height: 50px;

@@ -1,13 +1,13 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const domToImage = require("dom-to-image");
-const ejs = require("ejs");
+
+
 
 const app = express();
 const port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(__dirname + '/public'));
-app.use(express.static(__dirname + '/views'));
+app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/views"));
 app.set("view engine", "ejs");
 
 const socials = [
@@ -24,12 +24,9 @@ const socials = [
 app.get("/", (req, res) => {
   res.render("index", { socials: socials });
 });
-// app.post("/",(req,res)=>{
-  
-// })
 
 app.listen(port, () => {
   console.log("Server started on port " + port);
 });
 
-module.exports = app
+module.exports = app;
