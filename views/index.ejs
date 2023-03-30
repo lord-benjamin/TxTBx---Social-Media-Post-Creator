@@ -1,107 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Azeret+Mono&family=Courier+Prime&family=Kanit:wght@400;700&family=Manrope:wght@400;800&family=Merriweather&family=Montserrat:wght@400;500;700&family=Pacifico&family=Poppins&family=Sacramento&family=Source+Sans+Pro&family=Xanh+Mono&display=swap"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      type="image/png"
+      sizes="16x16"
+      rel="icon"
+      href="images/icons8-social-post-16.png"
+    />
+    <link rel="stylesheet" href="style.css" crossorigin="anonymous" />
+    <title>TxTBx - Social Media Post Creator</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Azeret+Mono&family=Courier+Prime&family=Kanit:wght@400;700&family=Manrope:wght@400;800&family=Merriweather&family=Montserrat:wght@400;500;700&family=Pacifico&family=Poppins&family=Sacramento&family=Source+Sans+Pro&family=Xanh+Mono&display=swap"
-    rel="stylesheet" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link type="image/png" sizes="16x16" rel="icon" href="images/icons8-social-post-16.png">
-  <link rel="stylesheet" href="style.css" crossorigin="anonymous" />
-  <title>TxTBx - Social Media Post Creator</title>
-</head>
-
-<body>
-  <div class="container">
-    <h1>
-      T<span><i class="fa-solid fa-xmark"></i></span>TB<span><i class="fa-solid fa-xmark"></i></span>
-    </h1>
-    <hr />
-    <div class="main-content">
-      <div id="left">
-        <form action="" autocomplete="off">
-          <div class="form-points">
-            <label for="">Background: <span><em>Default</em></span></label>
-            <div class="toggle-dark-light">
-              <h4>Light</h4>
-              <label class="switch">
-                <input onclick="boxChecked()" id="checkbox" type="checkbox" />
-                <span class="slider"></span>
-              </label>
-              <h4>Dark</h4>
-            </div>
-          </div>
-          <div class="form-points">
-            <label for="">Display Image
-              <span style="font-size: 15px; color: #eeeeee">(for best results choose 1:1 image)</span>: <span
-                id="dp-remove"><em>Remove</em></span></label>
-            <input type="file" id="change-dp" accept="image/*" />
-          </div>
-          <div class="form-points">
-            <label for="">Social Platform:
-              <span id="social-remove"><em>Remove</em></span></label>
-            <ul>
-              <% socials.forEach(social=> { %>
-                <li>
-                  <div class="tooltip">
-                    <%= social[0] %>
-                  </div>
-                  <img id=<%=social[0] %> class="social-icon <%=social[1]%>" src=<%= "images/" +social[0]+".png" %>
-                      alt=<%= social[0] %>>
-                </li>
-                <% }) %>
-            </ul>
-          </div>
-
-          <div class="form-points">
-            <label for="">Name: <span><em>Required</em></span></label>
-            <input id="name-field" oninput="changeName(this)" name="Name" type="text" placeholder="Enter Name" required />
-          </div>
-          <div class="form-points">
-            <label for="">UserName: <span><em>Required</em></span></label>
-            <input id="username-field" oninput="changeUsername(this)" name="Username" type="text" placeholder="Enter Username" required />
-          </div>
-          <div class="form-points">
-            <label for="">Text: <span><em>Required</em></span></label>
-            <textarea id="text-field" oninput="changeContent(this)" name="Text" rows="4" placeholder="Enter Text"
-              required></textarea>
-          </div>
-          
-        </form>
-        <button id="download-btn">Download Your Post!</button>
-      </div>
-      <div id="right" class="">
-        <div id="card">
-          <div class="card-credentials">
-            <div class="left-credentials">
-              <img id="dp" src="images/person.png" alt="dp" />
-              <div class="name-username">
-                <h3>Name...</h3>
-                <p>@<span>username...</span></p>
+  <body>
+    <div class="container">
+      <h1>
+        T<span><i class="fa-solid fa-xmark"></i></span>TB<span
+          ><i class="fa-solid fa-xmark"></i
+        ></span>
+      </h1>
+      <hr />
+      <div class="main-content">
+        <div id="left">
+          <form action="" autocomplete="off">
+            <div class="form-points">
+              <label for=""
+                >Background: <span><em>Default</em></span></label
+              >
+              <div class="toggle-dark-light">
+                <h4>Light</h4>
+                <label class="switch">
+                  <input onclick="boxChecked()" id="checkbox" type="checkbox" />
+                  <span class="slider"></span>
+                </label>
+                <h4>Dark</h4>
               </div>
             </div>
-            <div class="right-credentials">
-              <img id="social-platform" src="" alt="" />
+            <div class="form-points">
+              <label for=""
+                >Display Image
+                <span style="font-size: 15px; color: #eeeeee"
+                  >(for best results choose 1:1 image)</span
+                >: <span id="dp-remove"><em>Remove</em></span></label
+              >
+              <input type="file" id="change-dp" accept="image/*" />
             </div>
-          </div>
-          <div class="card-content">
-            <p>Text...</p>
+            <div class="form-points">
+              <label for=""
+                >Social Platform:
+                <span id="social-remove"><em>Remove</em></span></label
+              >
+              <ul>
+                <% socials.forEach(social=> { %>
+                <li>
+                  <div class="tooltip"><%= social[0] %></div>
+                  <img id="<%" ="social[0]" % /> class="social-icon
+                  <%=social[1]%>" src=<%= "images/" +social[0]+".png" %> alt=<%=
+                  social[0] %>>
+                </li>
+                <% }) %>
+              </ul>
+            </div>
+            <div class="form-points">
+              <label for=""
+                >Name: <span><em>Required</em></span></label
+              >
+              <input
+                id="name-field"
+                oninput="changeName(this)"
+                name="Name"
+                type="text"
+                placeholder="Enter Name"
+                required
+              />
+            </div>
+            <div class="form-points">
+              <label for=""
+                >UserName: <span><em>Required</em></span></label
+              >
+              <input
+                id="username-field"
+                oninput="changeUsername(this)"
+                name="Username"
+                type="text"
+                placeholder="Enter Username"
+                required
+              />
+            </div>
+            <div class="form-points">
+              <label for=""
+                >Text: <span><em>Required</em></span></label
+              >
+              <textarea
+                id="text-field"
+                oninput="changeContent(this)"
+                name="Text"
+                rows="4"
+                placeholder="Enter Text"
+                required
+              ></textarea>
+            </div>
+          </form>
+          <button id="download-btn">Download Your Post!</button>
+        </div>
+        <div id="right" class="">
+          <div id="card">
+            <div class="card-credentials">
+              <div class="left-credentials">
+                <img id="dp" src="images/person.png" alt="dp" />
+                <div class="name-username">
+                  <h3>Name...</h3>
+                  <p>@<span>username...</span></p>
+                </div>
+              </div>
+              <div class="right-credentials">
+                <img id="social-platform" src="" alt="" />
+              </div>
+            </div>
+            <div class="card-content">
+              <p>Text...</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <script src="script.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-</body>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
