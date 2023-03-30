@@ -78,7 +78,7 @@ function changeUsername(name) {
   document.querySelector(".name-username p span").innerHTML = name.value;
 }
 function changeContent(content) {
-  document.querySelector(".card-content p").innerHTML = content.value;
+  document.querySelector(".card-content p").innerHTML = content.value.replace(/\n/g, "<br>");;
 }
 
 function boxChecked() {
