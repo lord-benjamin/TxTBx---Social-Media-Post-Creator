@@ -1,8 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 
-
-
 const app = express();
 const port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -19,6 +17,7 @@ const socials = [
   ["Snapchat", "FFFC00"],
   ["Telegram", "249BD7"],
   ["Twitter", "29A8DF"],
+  ["Whatsapp", "1BD741"],
   ["Youtube", "FF0000"],
 ];
 app.get("/", (req, res) => {
