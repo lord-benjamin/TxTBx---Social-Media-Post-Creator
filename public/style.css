@@ -5,7 +5,7 @@
   margin: 0;
   box-sizing: border-box;
 }
-#background-vid{
+#background-vid {
   position: fixed;
   left: 0;
   top: 0;
@@ -14,7 +14,7 @@
   z-index: -1;
   opacity: 1;
 }
-.container{
+.container {
   z-index: 1;
 }
 hr {
@@ -53,29 +53,29 @@ body h1 span i {
   width: auto;
   display: block;
 }
-.toggle-dark-light{
+.toggle-dark-light {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: 10px auto 0;
-  width: 40%;
+  width: 100%;
 }
-.toggle-dark-light h4{
+.toggle-dark-light h4 {
   color: #00adb5;
   font-weight: 100;
 }
-.switch input{
+.switch input {
   opacity: 0;
   height: 0;
   width: 0;
 }
-.switch{
+.switch {
   display: inline-block;
   height: 100%;
   width: 80px;
   position: relative;
 }
-.slider{
+.slider {
   position: absolute;
   top: 0;
   left: 0;
@@ -87,11 +87,11 @@ body h1 span i {
   cursor: pointer;
   box-shadow: 0 0 15px #00adb5;
 }
-.slider:before{
+.slider:before {
   position: absolute;
   left: 5px;
   top: 50%;
-  transform: translate(0,-50%);
+  transform: translate(0, -50%);
   content: "";
   height: 80%;
   width: 35px;
@@ -99,15 +99,15 @@ body h1 span i {
   box-shadow: inset 0 0 15px 15px #eeeeee;
   transition: 0.5s ease;
 }
-input:checked + .slider{
+input:checked + .slider {
   background: #eeeeee;
 }
-input:checked + .slider:before{
+input:checked + .slider:before {
   box-shadow: inset -8px -4px 1px 4px #222831;
   position: absolute;
   right: 5px;
   top: 50%;
-  transform: translate(100%,-50%);
+  transform: translate(100%, -50%);
 }
 .main-content label {
   font-size: 20px;
@@ -207,18 +207,25 @@ input:checked + .slider:before{
 }
 #right {
   display: block;
-  background-image: linear-gradient(to bottom right,rgb(220, 220, 220),rgb(130, 130, 130));
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(220, 220, 220),
+    rgb(130, 130, 130)
+  );
   margin: auto 20px;
   resize: both;
   padding: 20px;
   transition: 0.5s ease;
 }
-.right-dark-mode{
-  background-image: linear-gradient(to bottom right,rgb(110, 110, 110),rgb(20, 20, 20));
+.right-dark-mode {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(110, 110, 110),
+    rgb(20, 20, 20)
+  );
 }
 #card {
   width: 450px;
-  min-width: 450px;
   resize: both;
   background-color: #eeeeee;
   color: #222831;
@@ -237,11 +244,13 @@ input:checked + .slider:before{
   display: flex;
   background-color: transparent;
   justify-content: space-between;
+  align-items: center;
   padding: 4% 4% 3%;
 }
 .left-credentials {
   display: flex;
   background-color: transparent;
+  height: 100%;
 }
 #dp {
   height: 50px;
@@ -261,7 +270,7 @@ input:checked + .slider:before{
 }
 .name-username h3 {
   background-color: transparent;
-  font-size: 22px;
+  font-size: 20px;
 }
 .name-username p {
   background-color: transparent;
@@ -270,7 +279,6 @@ input:checked + .slider:before{
 }
 .name-username p span {
   background-color: transparent;
-  font-size: 14px;
   margin-left: 1.5px;
 }
 .right-credentials {
@@ -279,7 +287,7 @@ input:checked + .slider:before{
   transition: 0.5s ease;
 }
 #social-platform {
-  height: 50px;
+  height: 100%;
   background-color: transparent;
   transition: 0.5s ease;
 }
@@ -289,7 +297,7 @@ input:checked + .slider:before{
 }
 .card-content p {
   background-color: transparent;
-  font-size: 16px;
+  font-size: 18px;
   padding: 0 2%;
   text-align: justify;
   font-weight: 100;
@@ -313,17 +321,96 @@ input:checked + .slider:before{
 
 /************************* media query ***************************/
 
-/* @media(max-width: 1300px){
-    .main-content{
-        display: flex;
-        flex-direction: column;
-    }
-    #left{
-        display: block;
-        width: 100%;
-    }
-    #right{
-        display: block;
-        width: 100%;
-    }
-} */
+@media (max-width: 1350px) {
+  #left {
+    flex-basis: 50%;
+  }
+}
+@media (max-width: 1100px) {
+  .main-content {
+    flex-direction: column-reverse;
+  }
+  #right {
+    width: fit-content;
+    display: flex;
+    margin: 10px auto;
+  }
+  #download-btn {
+    display: flex;
+    margin: 10px auto;
+  }
+}
+@media (max-width: 600px) {
+  #right {
+    width: 90%;
+    min-width: 300px;
+    height: auto;
+    display: flex;
+    margin: 10px auto;
+  }
+  #card {
+    width: 100%;
+  }
+  .form-points ul {
+    display: block;
+  }
+  .form-points ul li {
+    width: fit-content;
+    display: inline-flex;
+    margin: 10px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  #left {
+    display: block;
+    margin: 0;
+    width: auto;
+  }
+  #left form {
+    width: auto;
+    display: block;
+  }
+  .name-username h3 {
+    font-size: 18px;
+  }
+  .name-username p {
+    font-size: 12px;
+  }
+  .name-username {
+    height: 40px;
+  }
+  #dp {
+    height: 40px;
+    width: 40px;
+  }
+  .right-credentials {
+    height: 40px;
+    width: 40px;
+  }
+  .card-content p {
+    font-size: 16px;
+    text-align: left;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .name-username h3 {
+    font-size: 16px;
+  }
+  .name-username p {
+    font-size: 10px;
+  }
+  .name-username {
+    height: 30px;
+  }
+  #dp {
+    height: 30px;
+    width: 30px;
+  }
+  .right-credentials {
+    height: 30px;
+    width: 30px;
+  }
+  .card-content p {
+    font-size: 14px;
+  }
+}
