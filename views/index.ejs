@@ -75,12 +75,10 @@
                 <span id="social-remove"><em>Remove</em></span></label
               >
               <ul>
-                <% socials.forEach(social=> { %>
+                <% socials.forEach(social => { %>
                 <li>
                   <div class="tooltip"><%= social[0] %></div>
-                  <img id="<%" ="social[0]" % /> class="social-icon
-                  <%=social[1]%>" src=<%= "images/" +social[0]+".png" %> alt=<%=
-                  social[0] %>>
+                  <img id=<%= social[0] %> class="<%="social-icon "+ social[1]%>" src=<%="images/"+ social[0] + ".png"%> alt=<%= social[0] %> />
                 </li>
                 <% }) %>
               </ul>
