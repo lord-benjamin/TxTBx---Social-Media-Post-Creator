@@ -20,8 +20,11 @@ const socials = [
   ["Whatsapp", "1BD741"],
   ["Youtube", "FF0000"],
 ];
+const d = new Date();
+const currentYear = d.getFullYear();
+
 app.get("/", (req, res) => {
-  res.render("index", { socials: socials });
+  res.render("index", { socials: socials, currentYear: currentYear });
 });
 
 app.listen(port, () => {
