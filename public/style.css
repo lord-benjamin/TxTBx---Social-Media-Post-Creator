@@ -5,18 +5,6 @@
   margin: 0;
   box-sizing: border-box;
 }
-#background-vid {
-  position: fixed;
-  left: 0;
-  top: 0;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: -1;
-  opacity: 1;
-}
-.container {
-  z-index: 1;
-}
 hr {
   width: 40%;
   position: absolute;
@@ -301,6 +289,24 @@ input:checked + .slider:before {
   padding: 0 2%;
   text-align: justify;
   font-weight: 100;
+}
+.footer {
+  background-color: #393e46;
+  padding: 35px;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+}
+.footer p{
+  background-color: transparent;
+  font-weight: 500;
+}
+.footer p i{
+  background-color: transparent;
+}
+.footer span {
+  color: #00adb5;
+  background-color: transparent;
 }
 
 ::-webkit-scrollbar {
