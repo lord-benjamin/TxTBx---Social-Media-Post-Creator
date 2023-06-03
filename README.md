@@ -25,7 +25,7 @@ Generate aesthetic posts for a variety of social media platforms
 
 To start the development server, run the following command in the project directory:
 
-    npm run dev
+    npm start
     
 This will start the server and it will be accessible at [`http://localhost:3000`](http://localhost:3000).
 
