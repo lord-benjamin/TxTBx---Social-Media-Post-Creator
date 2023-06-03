@@ -5,13 +5,13 @@ Generate aesthetic posts for a variety of social media platforms
 1. Clone the repository to your local machine.
     
    ```bash
-   git clone https://github.com/your-username/your-repo.git
+   git clone https://github.com/lord-benjamin/TxTBx---Social-Media-Post-Creator.git
    ```
 
 2. Navigate to the project directory.
 
    ```bash
-   cd your-repo
+   cd TxTBx---Social-Media-Post-Creator
    ```
 
 3. Install the required dependencies using NPM.
