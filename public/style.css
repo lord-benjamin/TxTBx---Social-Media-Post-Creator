@@ -131,7 +131,8 @@ input:checked + .slider:before {
   list-style: none;
   display: flex;
   margin-top: 10px;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 .form-points ul li {
   height: 40px;
@@ -301,11 +302,11 @@ input:checked + .slider:before {
   color: white;
   font-size: 18px;
 }
-.footer p{
+.footer p {
   background-color: transparent;
   font-weight: 500;
 }
-.footer p i{
+.footer p i {
   background-color: transparent;
 }
 .footer span {
@@ -360,9 +361,6 @@ input:checked + .slider:before {
   }
   #card {
     width: 100%;
-  }
-  .form-points ul {
-    display: block;
   }
   .form-points ul li {
     width: fit-content;
